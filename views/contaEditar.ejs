@@ -1,0 +1,45 @@
+<%- include ('partials/header.ejs') %>
+
+<body>
+  <%- include ('partials/navbar.ejs') %>
+
+  <section>
+    <div
+      class="container d-flex flex-column align-items-center justify-content-center"
+    >
+      <div class="border p-5">
+        <form action="/update/<%= animes.id %>" method="POST">
+          <div class="inputbox">
+            <ion-icon name="mail-outline"></ion-icon>
+            <input
+              type="text"
+              name="nome"
+              value="<%= animes.nome %>"
+              required
+            />
+            <label for="">Nome</label>
+          </div>
+          <div class="inputbox">
+            <ion-icon name="mail-outline"></ion-icon>
+            <input
+              type="email"
+              name="email"
+              value="<%= animes.email %>"
+              required
+            />
+            <label for="">Email</label>
+          </div>
+          <div class="inputbox">
+            <ion-icon name="mail-outline"></ion-icon>
+            <input type="text" name="cpf" value="<%= animes.cpf %>" required />
+            <label for="">CPF</label>
+          </div>
+          <button class="btn btn-primary" type="submit">Confirma Edição</button>
+        </form>
+        
+      </div>
+    </div>
+  </section>
+</body>
+
+<%- include ('partials/footer.ejs') %>
